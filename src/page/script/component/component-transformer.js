@@ -191,6 +191,14 @@ function transformComponentAst ($ast, fileKey) {
         global.log("transform component data error", fileKey, error)
     }
 
+    try {
+        //TODO: 放这里不太人性化，，，，有点那啥。。。。不能统一搞
+        //需在transformPageLifetimes之后
+        $ast.root().replace("Component($$$)", "export default $$$")
+    } catch (error) {
+        global.log("Component -> export default  error", fileKey, error)
+    }
+
     //此行一定要位于transformObservers前面，切记！
     global.props[fileKey] = ggcUtils.getComponentPropsList($ast, fileKey)
 
@@ -200,14 +208,6 @@ function transformComponentAst ($ast, fileKey) {
         transformRelation($ast, fileKey)
     } catch (error) {
         global.log("transformRelation error", fileKey, error)
-    }
-
-    try {
-        //TODO: 放这里不太人性化，，，，有点那啥。。。。不能统一搞
-        //需在transformPageLifetimes之后
-        $ast.root().replace("Component($$$)", "export default $$$")
-    } catch (error) {
-        global.log("Component -> export default  error", fileKey, error)
     }
 
     try {
