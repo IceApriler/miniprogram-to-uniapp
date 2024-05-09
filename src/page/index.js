@@ -852,7 +852,7 @@ class Page {
             case "vue":
                 if (global.isMergeWxssToVue) {
                     if (extname === "vue") {
-                        styleContentFull = `<style ${ lang }>\r\n ${ styleContent } ${ wxsStyleCode } \r\n</style>`
+                        styleContentFull = `<style ${ lang } scoped>\r\n ${ styleContent } ${ wxsStyleCode } \r\n</style>`
                     }
                     styleContent = styleContentFull
                 } else {
@@ -863,7 +863,7 @@ class Page {
                     //写入文件
                     fs.writeFileSync(cssFilePath, styleContent)
                     //
-                    styleContent = `<style ${ lang }>\r\n@import "./${ fileName }.${ styleExtname }";${ wxsStyleCode }\r\n</style>`
+                    styleContent = `<style ${ lang } scoped>\r\n@import "./${ fileName }.${ styleExtname }";${ wxsStyleCode }\r\n</style>`
                 }
                 fileContent = templateContent + "\r\n" + wxsCode + jsContent + "\r\n" + styleContent
                 break
