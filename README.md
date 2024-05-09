@@ -1,5 +1,27 @@
 # 转换各种小程序为 uni-app 项目 v2.0
 
+[原仓库](https://github.com/zhangdaren/miniprogram-to-uniapp#readme)
+
+## 本仓库为修改版，用于自用
+
+修复以下问题：
+
+- fix: setData使用$set进行响应式更新 (src/project/template/uni_modules/zp-mixins/utils/_set.js)
+  - 备注：实际使用中setData更新数据有问题，故做此修改
+- fix: 解决page容器会BFC的问题 (src/page/index.js)
+  - 备注：样式问题
+- fix: 样式优先取scss和less文件 (src/project/projectHandle.js)
+  - 备注：用于项目中使用了scss和less的项目
+- fix: 调整执行顺序 (src/page/script/component/component-transformer.js)
+  - 备注：解决observers转换为watch丢失deep和immediate的问题。应该还会有其他问题，碰到这个问题了，先解决掉。
+
+## Npm 安装本仓库
+```bash
+npm i miniprogram-to-uniapp-self -g
+```
+
+## 以下为原文档
+
 支持转换**微信、QQ、头条/抖音、支付宝/钉钉和百度等小程序**转换到 uni-app 项目
 
 输入小程序项目路径，即可输出 uni-app 项目。

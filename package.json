@@ -1,5 +1,5 @@
 {
-    "name": "miniprogram-to-uniapp",
+    "name": "miniprogram-to-uniapp-self",
     "author": {
         "name": "zhangdaren",
         "email": "375890534@qq.com"
@@ -41,11 +41,11 @@
         "progress": "^2.0.3"
     },
     "deprecated": false,
-    "description": "轻松将各种小程序转换为 uni-app 项目",
+    "description": "轻松将各种小程序转换为 uni-app 项目 （自用修改版，非原仓库）",
     "devDependencies": {
         "jest": "^29.2.0"
     },
-    "homepage": "https://github.com/zhangdaren/miniprogram-to-uniapp#readme",
+    "homepage": "https://github.com/IceApriler/miniprogram-to-uniapp",
     "keywords": [
         "weixin",
         "qq",
