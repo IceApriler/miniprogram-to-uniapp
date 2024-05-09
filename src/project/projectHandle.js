@@ -173,8 +173,10 @@ async function transform (sourceFolder, targetSourceFolder) {
                     case '.qss':
                     case '.ttss':
                     case '.acss':
-                        fileData['wxss'] = file
-                        fileData['cssLanguage'] = ""
+                        if (!fileData['cssLanguage']) {
+                            fileData['wxss'] = file
+                            fileData['cssLanguage'] = ""
+                        }
                         break
                     case '.less':
                         fileData['wxss'] = file
