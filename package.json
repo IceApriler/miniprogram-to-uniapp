@@ -68,5 +68,5 @@
         "test": "jest",
         "debugger": "node --inspect-brk ./node_modules/jest/bin/jest --runInBand --no-cache --no-watchman"
     },
-    "version": "2.2.6"
+    "version": "2.2.7"
 }
